@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Form Elements</title>
+    <!-- <style>
+      #top {
+        color: red;
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- ctrl + / to comment in any code language -->
+    
+    <p id="top">Here is an HTML form containg basic input types. For more information 
+       and more input types, visit 
+       <a href="https://w3schools.com/html/html_forms.asp" target="_blank">W3 Schools</a></p>
+
+    <!-- form tag itself has no visuals, but all input elements wrapped by the form will
+      be grouped and submitted together by name. We also get browser default behavior -->
+    <!-- Form actions point to the file or function or REstful API endpoint to process
+      the form data -->
+    <!-- The method attribute is where you assign which HTTPS method
+      you want to use to submit your form data 
+       GET    = usually to retrieve data (read) from the endpoint 0 form data is in your URL
+       POST   = usually to write data to a new DB entry, form data is in the request body, NOT the URL
+       PUT    = usually to edit an existing record
+       DELETE = to delete a record - usually need some sort of unique identifier passed to the API 
+                endpoint or DB to know which record to delete
+      -->
+    <form action="login.js" method="GET" target="_self" name="userSignup">
+    <!-- This is an oldschool HTML only way of creating form/input groups, div is usually used w css -->
+      <fieldset>
+        <!-- Label for the form group/fieldset is the legend -->
+         <legend>Simple text input</legend>
+         <p>The box and title are created by the fieldset and legend tags</p>
+         <!-- For is for accessibiity, name is for DB, ID is for local JS scripts -->
+         <label for="firstName">First Name: </label> 
+         <!-- Default input tpe is text, but you should always define an input type -->
+         <input name="firstName" id="firstName" type="text"/>
+         <!-- Another text input with new attributes -->
+        <label for="lastName">Last Name:</label>
+        <!-- Name = where to write in the DB, Value = what to write (editable) -->
+        <input name="lastName" type="text" id="lastName" placeholder="Doe" maxlength="3" />
+        <br/>
+
+        <label for="age">Age: </label>
+        <!-- Type number only allows characters that are math related to be entered -->
+        <!-- With attributes, the precence of a boolean attribute is saying it is true,
+            if not true, do not include it -->
+        <input type="number" name="age" id="age" min="0" max="40" required/>
+        <br />
+        <label for="password">Enter a new password: </label>
+        <input type="password" minlength="15" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Text Area Fields</legend>
+        <label for="whyIDM">Why did you apply to IDM?</label>
+        <textarea name="whyIDM" id="whyIDM" cols="50" rows="10"></textarea>
+      </fieldset>
+
+      <fieldset><legend>Checkbox Group</legend>
+      <p>Checkboxes allow the user to select more than one option/input for
+        the same answer at once. Checkboxes in the same group have the same name 
+        but different values!
+      </p>
+      <p>What kind of pets do you have?</p> 
+      <label><input type="checkbox" name="pet" value="dog" />DOG</label> 
+      <label><input type="checkbox" name="pet" value="cat" />CAT</label> 
+      <label><input type="checkbox" name="pet" value="chicken" />CHICKEN</label> 
+      <label><input type="checkbox" name="pet" value="snake" />SNAKE</label> 
+      </fieldset>
+
+      <fieldset><legend>Radio Button Group</legend>
+      <p>Radio button groups allow the user to select ONLY ONE option/input for
+        the same answer at once. Radio Buttons in the same group have the same name 
+        but different values!
+      </p>
+      <p>Which ones your favorite?</p> 
+      <label><input type="radio" name="favPet" value="dog" />DOG</label> 
+      <label><input type="radio" name="favPet" value="cat" />CAT</label> 
+      <label><input type="radio" name="favPet" value="chicken" />CHICKEN</label> 
+      <label><input type="radio" name="favPet" value="snake" />SNAKE</label> 
+      </fieldset>
+
+      <fieldset><legend>Select Option Dropdowns</legend>
+        <p>Using the select and options tags, you can add items to a dropdown to select</p>
+        <!-- dropdown itself is not stylable -->
+        <label for="state">Pick a state!</label>
+        <select name="state" id="state">
+          <option value="NY">New York</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NH">New Hampshire</option>
+        </select>
+      </fieldset>
+
+      <!-- Finally a button to submit!
+       This button submits the form simply by being wrapped in the form tag -->
+      <button role="button"> Sign Up!</button> 
+    </form>
+    <a href="#top">Back to top</a>
+  </body>
+</html>
