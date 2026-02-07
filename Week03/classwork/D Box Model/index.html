@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Navbar | Inline-Block</title>
+
+    <style type="text/CSS">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      }
+
+      ul {
+        /* remove all of the bullet points */
+        list-style-type: none;
+        overflow: hidden;
+        background-color: orange;
+        /* inline block workaround for stacking boxes
+        zero out the font size of the parent element of the inline block elements
+        to get rid of the inherent tiny space between letters */
+        font-size: 0;
+      }
+
+      li {
+        /* LI display block by default, we want them to share horizontal space so they can stack
+        we do this with changing it to INLINE-BLOCK */
+        display: inline-block;
+        font-size: 1rem;
+        /* width: 200px; */
+      }
+
+      li a {
+        display: block;
+        text-align: center;
+        /* lets make our anchor tags big and chunky with block and box model props */
+        width: 100px;
+        padding: 10px;
+        color:chartreuse;
+        text-decoration: none;
+      }
+
+      .active {
+        background-color: cornflowerblue;
+      }
+
+      /* hover is a pseudo class selector, its a particular state of our anchor tags */
+      li a:hover {
+        background-color: rgba(0,0,0,0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li>
+            <a class="active" href="#">Link 2</a>
+          </li>
+
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </nav>
+    </header>
+  </body>
+</html>

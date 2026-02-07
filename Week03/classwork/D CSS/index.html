@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intro to CSS Text and Spans</title>
+    <style type="text/CSS">
+      /* Universal selector - always the first CSS rule because the intent
+      is to reset and then overwrite with more specific styles/selectors further down */
+      * {
+        /* border: 1px solid blue; */
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        margin-top: 1rem;
+        margin-bottom: .5rem;
+        color: #f50;
+        /* above is shorthand for #ff5500 */
+        font-family:'Courier New', Courier, monospace;
+      }
+
+      a {
+        color: cornflowerblue;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .silly_text {
+        font-family: fantasy;
+        font-size: 1.5rem;
+      }
+
+      #important_stuff {
+        font-size: xx-large;
+        font-weight: bold;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        color: green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <p id="important_stuff">This is important. It gets an ID.</p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu felis
+      vestibulum nisi molestie viverra sed at nibh. Pellentesque odio odio,
+      faucibus in aliquet in, luctus nec ligula. Aliquam gravida eu eros a
+      commodo. <a href="#" class="silly_text">Cras non sapien</a> ut ipsum convallis viverra. Phasellus nec ante
+      est. Proin et ullamcorper justo. Aenean a tempus dolor. Etiam commodo
+      lorem in risus consectetur, id fringilla massa feugiat. Nam mattis urna
+      dui, ut pharetra tortor commodo eget. <span class="silly_text">Quisque interdum, enim quis
+      condimentum vehicula, enim est cursus odio, et aliquam arcu enim id diam.
+      Quisque accumsan, augue quis eleifend euismod, quam nisl congue purus, non
+      auctor nisi ante et felis.</span> Vivamus placerat elementum arcu ac placerat.
+      Maecenas justo ante, ultrices ut sagittis et, ultricies at mauris. Vivamus
+      et porta nunc. Maecenas aliquam porta sapien sed vehicula.
+    </p>
+    <p>
+      Mauris malesuada diam felis, eu porttitor quam sagittis at. Integer nec
+      ante eu tortor molestie eleifend vel ac velit. In ornare sem vel orci
+      mattis, in ultricies ligula maximus. Duis et cursus lacus. Curabitur
+      tempor feugiat tortor ac congue. Aliquam in nisi eu est congue vehicula.
+      Nunc sollicitudin dui ut bibendum volutpat. Vivamus feugiat mauris vitae
+      magna fermentum, vel imperdiet nunc tincidunt. Etiam ac erat eu mi
+      consectetur fringilla. Phasellus sollicitudin diam eu tempus hendrerit.
+      Donec id turpis ac enim aliquam varius at ac velit. Ut cursus arcu tellus,
+      condimentum volutpat ante mattis non. Lorem ipsum dolor sit amet,
+      consectetur adipiscing elit.
+    </p>
+    <p>
+      Nunc rhoncus ipsum porttitor orci iaculis, id mattis tellus aliquam. Donec
+      placerat risus sed lectus tempor, vitae dignissim magna porttitor. Nullam
+      tempus hendrerit mauris, eu molestie tellus malesuada quis. Donec lacinia
+      bibendum lacus in posuere. Sed vitae ex quis ante suscipit ultricies a non
+      risus. In auctor nec nibh nec finibus. Quisque congue ligula ante, quis
+      convallis turpis placerat vitae. Quisque vel tortor metus. Pellentesque
+      habitant morbi tristique senectus et netus et malesuada fames ac turpis
+      egestas. Ut tempor aliquet cursus. Nulla at mattis sapien, a condimentum
+      risus.
+    </p>
+  </body>
+</html>
