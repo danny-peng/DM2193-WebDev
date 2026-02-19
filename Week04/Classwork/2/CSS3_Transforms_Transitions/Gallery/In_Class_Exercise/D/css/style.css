@@ -1,0 +1,173 @@
+/* always load dependencies first - fonts, css variables, other style sheets */
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+/* generic to specific with our styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Kaushan Script", cursive;
+
+  /* this is where we would declare and use a full size image background */
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* MAIN NAVIGATION */
+header {
+  width: 90%;
+  padding: 0 10%;
+  height: 50px;
+  overflow: hidden;
+  position: fixed;
+  background-color: grey;
+  z-index: 100;
+
+  /* flexbox container properties */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../img/moroccan-flower.png");
+}
+
+header h1 {
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+nav li {
+  font-size: 1.25rem;
+  height: 50px;
+  line-height: 50px;
+  width: 120px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #eee;
+  display: block;
+  transition: all 1s;
+  /* transitions are defined on base state */
+}
+
+nav a:hover {
+  color: red;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav a.active {
+  background-color: black;
+  color: yellow;
+}
+
+/* GALLERY CARD */
+.container {
+  width: 900px;
+  margin: 0 auto;
+  padding-top: 100px;
+  /* rememeber to zero out font size of the container of inline block elements
+  dont forget to bring that font size back in the child element */
+  font-size: 0;
+}
+
+.polaroid {
+  width: 260px;
+  margin: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.polaroid img {
+  /* common design pattern is to never size images themselves
+  instead we make the image width 100% of its parent. and then assign dimensions to the parent */
+  width: 100%;
+  height: auto;
+  /* add some borders to mimic polaroid paper */
+  border: 10px solid #ccc;
+  border-bottom-width: 45px;
+}
+
+.polaroid p {
+  font-size: 1rem;
+  color: #333;
+  position: absolute;
+  bottom: 9px;
+  width: 280px;
+  text-align: center;
+}
+
+/* TRANSFORMS AND TRANSITIONS */
+.scale_up {
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+.scale_x {
+  transform: scale(2, 1);
+}
+
+.scale_y {
+  transform: scaleY(2);
+}
+
+.skew_x {
+  transform: skewX(-20deg);
+}
+
+.skew_y {
+  transform: skewY(-20deg);
+}
+
+.skew_both {
+  transform: skew(-10deg, -30deg);
+}
+
+.rot_x {
+  transform: rotateX(120deg);
+}
+
+.rot_y {
+  transform: rotateY(120deg);
+}
+
+.rot_z {
+  transform: rotateZ(120deg);
+}
+
+.rotate_left {
+  transform: rotate(-20deg);
+  transition: all 5s ease;
+}
+
+.rotate_left:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.skew_hover {
+  transform: skewX(-30deg);
+  transition: all 5s ease;
+}
+
+.skew_hover:hover {
+  transform: skewX(30deg);
+}
+
+.color_swap {
+  filter: grayscale(100%) blur(5px);
+  transition: all 1s ease;
+}
+
+.color_swap:hover {
+  filter: grayscale(0%) blur(0);
+}
