@@ -1,0 +1,215 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Flexbox Container and Item Styles */
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* some styles so that we can see our containers */
+    border: 1px solid purple;
+    background-color: rgba(255, 0, 255, 0.3);
+    min-height: 400px;
+}
+
+.item {
+    /* flex item properties */
+    width: 23%; /* 4 items in a row with some gap */
+    height: 300px;
+    /* so we can see them */
+    border: 1px solid cornflowerblue;
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* Atomic CSS Design Pattern */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* jutify content (horizontal in row layout)*/
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-around {
+    justify-content: space-around;
+}
+
+.justify-even {
+    justify-content: space-evenly;
+}
+
+/* Align Items */
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.align-stretch {
+    align-items: stretch;
+}
+
+.align-stretch > div {
+    /* Needed when flex items have set height */
+    height: auto; 
+}
+
+.align-self {
+    align-self: stretch;
+    /* Needed when flex items have set height */
+    height: auto; 
+}
+
+/* anything smaller than 768px width - aka mobile phone */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+
+    }
+
+    /* This is needed to override with stretch */
+    .align-self, .align-stretch > div {
+        height: 300px;
+        width: auto;
+    }
+}
+
+
+/* Classic Layout Styles */
+header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 5%;
+    min-height: 100px;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+    background-color: darkcyan;
+}
+
+.grid-item {
+    width: 23%;
+    margin: 1%;
+}
+
+.secondary-nav {
+    min-width: 25%;
+    background-color: aquamarine;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    border-bottom: 1px solid gray;
+}
+
+.menu span {
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight:600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.menu a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: blue;
+    min-height: 100px;
+}
+
+footer h6 {
+    margin:0;
+}
+
+/* old tablet breakpoint */
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: red;
+    }
+
+    .grid-item {
+        width: 48%;
+        margin: 1%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        background-color: green;
+    }
+
+    .grid-container {
+        flex-direction: column;
+    }
+
+    .grid-item {
+        width: 95%;
+    }
+    
+    .wrapper {
+        flex-direction: column-reverse;
+    }
+}

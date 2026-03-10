@@ -1,0 +1,135 @@
+/* Gloobal Styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop first styling approach */
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url('../img/grey_wash_wall.png');
+    padding: 0 2rem;
+    position: relative;
+}
+
+.brand {
+    margin: 0;
+    font-weight: 300;
+}
+
+header a {
+    color: #AAA;
+    text-decoration: none;
+}
+
+/* hide on desktop show on mobile */
+.mobile-menu {
+    display: none;
+}
+
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li {
+    min-width: 5rem;
+}
+
+.menu li a {
+    display: block;
+    padding: 1rem;
+}
+
+.menu li a:hover {
+    color: #eee;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.thumb {
+    flex: 0 0 23%;
+    margin: 1rem auto;
+}
+
+/* tablet size classic ipad ranges */
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
+} */
+
+/* tablet size classic ipad max width only */
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: chartreuse;
+    }   
+    .thumb {
+        flex: 0 0 45%;
+    }
+}
+
+/* mobile = 768px */
+@media screen and (max-width: 767px) {
+    body {
+        background-color: blueviolet;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        padding: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+        color: #AAA;
+        font-size: 2rem;
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+    }
+
+    .menu {
+        display:none;
+        flex-direction: column;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .menu li {
+        border-bottom: 1px solid rgba(255,255,255,0.4);
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    /* typical override for flexbox on mobile */
+    .thumb {
+        flex: 0 0 100%;
+        margin: 1rem auto;
+    }
+}

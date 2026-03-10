@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive 101</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <script type="text/javascript">
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // this is where we do things like get elements and store them as js variables
+        // This is also where we add event listeners to elements on the page.
+        document.getElementById("mobile-menu").addEventListener("click", toggleShow);
+      });
+
+      /*
+      function toggleShow() {
+        // get the ul from our main nav and store the element itself at a js variable
+        var menu = document.getElementById("menu");
+
+        // long way
+        // if menu's class list property contains show, remove it.
+        // if it does not contain show, add it
+        if (menu.classList.contains("show")) {
+          menu.classList.remove("show");
+        } else {
+          menu.classList.add("show");
+        }
+      }
+        */
+      function toggleShow() {
+        document.getElementById("menu").classList.toggle("show");
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1 class="brand"><a href="#">Logo</a></h1>
+      <!-- Hide this till we hit smaller screens! -->
+      <span class="mobile-menu" id="mobile-menu">&#8801;</span>
+      <nav>
+        <ul class="menu" id="menu">
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+          <li><a href="#">Link 5</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+      <div class="thumb">
+        <img
+          src="./img/pepesilvia.jpg"
+          alt="Frazzled office worker inside messy cubicle."
+        />
+      </div>
+    </main>
+  </body>
+</html>
