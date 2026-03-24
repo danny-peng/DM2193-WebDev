@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- <link rel="stylesheet" href="../css/main.css" /> -->
+    <link rel="stylesheet" href="../css/projects.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // code in here will fire once all of the HTML abd CSS on the page has loaded
+            // we do this so we don't try to select any elements on the page before they have rendered
+            document.getElementById('mobile-menu').addEventListener('click', toggleShow)
+            document.getElementById('menu').addEventListener('click', toggleShow)
+        })
+
+        function toggleShow(){
+            const menu = document.getElementById('menu')
+            const nav = document.querySelector('nav')
+            menu.classList.toggle('show')
+            nav.classList.toggle('show')
+        }
+     </script>
+
+    <title>Danny Peng</title>
+  </head>
+
+  <body>
+    <header>
+        <span class="mobile-menu" id="mobile-menu" >&#8801;</span>
+        <nav class="nav" id="nav">
+            <ul class="menu" id="menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a class="active" href="./projects.html">Projects</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="container-label">
+                <h1>Projects</h1>
+                <p>Here are some of the projects I have worked on. Click on the project name to view the GitHub repository.</p>
+            </div>
+            <div class="gallery">
+                <div class="project" id="realm-raiders-desc">
+                    <img src="../img/realm-raiders.png" alt="Image of gameplay of Realm-Raiders"/>
+                    <div class="project-desc">
+                        <h3>Realm Raiders</h3>
+                        <ul>
+                            <li>Collaborated with a partner using GitHub to develop a Java-based roguelike game inspired by Soul Knight</li>
+                            <li>Used Java AWT and implemented game elements such as input, projectiles and collisions</li>
+                            <li>Implemented saving and loading of games through SQL</li>
+                            <li>Prototyped multiplayer functionality with network sockets to enable real-time player communication</li>
+                        </ul>
+                        <ul class="quick-links">
+                            <li><a href="https://github.com/tahasinshadat/Realm-Raiders" target="_blank">
+                                GitHub
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project" id="hu-tao-bot-desc">
+                    <img src="../img/bot.png" alt="Image of the output of a Discord Bot command"/>
+                    <div class="project-desc">
+                        <h3>Hu Tao Bot</h3>
+                        <ul>
+                            <li>Tracks the total length of time users are in a voice channel for throughout an event, handles rejoins</li>
+                            <li>Discord bot that responds to certain messages automatically</li>
+                            <li>Used Docker to host the Discord bot online</li>
+                        </ul>
+                        <ul class="quick-links">
+                            <li><a href="https://github.com/danny-peng/Hu-Tao-Bot" target="_blank">
+                                GitHub
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project" id="pygame-tetris-desc">
+                    <img src="../img/tetris.png" alt="Image of Tetris gameplay"/>
+                    <div class="project-desc">
+                        <h3>Pygame Tetris</h3>
+                        <ul>
+                            <li>Tetris clone using python and pygame</li>
+                            <li>Used OOP and pygame and learned project structure</li>
+                            <li>Implemented classic Tetris mechanics faithfully and tracked score</li>
+                        </ul>
+                        <ul class="quick-links">
+                            <li><a href="https://github.com/danny-peng/pygame-tetris" target="_blank">
+                                GitHub
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project" id="tracer-desc">
+                    <img src="../img/tracer_img.jpg" alt="Image of TRACER, a robot project"/>
+                    <div class="project-desc">
+                        <h3>TRACER</h3>
+                        <ul>
+                            <li>Modular robot project with 4 other people for a challenge by the Port Authority of New York and New Jersey</li>
+                            <li>Designed autonomous navigation, obstacle avoidance, and data collection</li>
+                            <li>Designed and implemented 2 way communication</li>
+                        </ul>
+                        <ul class="quick-links">
+                            <li><a href="https://github.com/tahasinshadat/PROJECT-TRACER" target="_blank">
+                                GitHub
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>

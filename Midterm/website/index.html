@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <title>Danny Peng</title>
+    <script type="text/javascript">
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // code in here will fire once all of the HTML abd CSS on the page has loaded
+            // we do this so we don't try to select any elements on the page before they have rendered
+            document.getElementById('mobile-menu').addEventListener('click', toggleShow)
+            document.getElementById('menu').addEventListener('click', toggleShow)
+        })
+
+        function toggleShow(){
+            const menu = document.getElementById('menu')
+            const nav = document.querySelector('nav')
+            menu.classList.toggle('show')
+            nav.classList.toggle('show')
+        }
+     </script>
+  </head>
+
+  <body>
+    <header>
+        <span class="mobile-menu" id="mobile-menu" >&#8801;</span>
+        <nav class="nav" id="nav">
+            <ul class="menu" id="menu">
+                <li><a class="active" href="#">Home</a></li>
+                <li><a href="./projects/projects.html">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="intro">
+        <h1>
+        Danny Peng
+        </h1>
+        <p>
+        Aspiring software engineer and undergraduate student at NYU, passionate about learning and technology.
+        </p>
+    </div>
+
+    <div class="about">
+        <div class="headshot"> 
+            <img src="./img/headshot.jpg" alt="Headshot of Danny Peng" class="square-img"/>
+        </div>
+        <div class="bio">
+            <h2>About Me</h2>
+            <p>
+                I am an aspiring software engineer and an undergraduate student at NYU Tandon School of Engineering pursuing Computer Science.
+                I have been fascinated with technology from a young age. From block coding to robotics, I love trying everything tech related. 
+                While I may be pursuing software engineering currently, I am always open to learning new things.
+            </p>
+            <ul class="quick-links">
+                <li><a href="https://drive.google.com/drive/folders/13DkK6VpXfFGFs_ZuVxCguDxOUggkyuDP?usp=sharing" target="_blank">Resume</a></li>
+                <li><a href="https://www.linkedin.com/in/danny-peng-cs/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/danny-peng" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="project-gallery">
+        <div class="gallery-label">
+            <h2>Projects: </h2>
+        </div>
+
+        <div class="gallery-preview">
+            <div class="thumb">
+                <img src="./img/realm-raiders.png" alt="Image of gameplay of Realm-Raiders"/>
+                <p>Realm Raiders</p>
+                <p class="info">A Java-based roguelike game inspired by Soul Knight, featuring multiplayer functionality and SQL-based saving/loading.
+                </p>
+                <ul class="quick-links info">
+                    <li><a href="./projects/projects.html#realm-raiders-desc">Learn More</a></li>
+                    <li><a href="https://github.com/tahasinshadat/realm-raiders" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="thumb">
+                <img src="./img/bot.png" alt="Image of the output of a Discord Bot command"/>
+                <p>Discord Bot</p>
+                <p class="info">A Discord Bot built with Python and the discord.py library, designed to provide various functionalities and commands for server members.</p>
+                <ul class="quick-links info">
+                    <li><a href="./projects/projects.html#hu-tao-bot-desc">Learn More</a></li>
+                    <li><a href="https://github.com/danny-peng/hu-tao-bot" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="thumb">
+                <img src="./img/tetris.png" alt="Image of Tetris gameplay"/>
+                <p>Pygame Tetris</p>
+                <p class="info">A Tetris game developed using Python and the Pygame library, featuring classic gameplay mechanics.</p>
+                <ul class="quick-links info">
+                    <li><a href="./projects/projects.html#pygame-tetris-desc">Learn More</a></li>
+                    <li><a href="https://github.com/danny-peng/pygame-tetris" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+            <div class="thumb">
+                <img src="./img/tracer_img.jpg" alt="Image of TRACER, a robot project"/>
+                <p>TRACER</p>
+                <p class="info">A robot project designed for autonomous navigation and object recognition.</p>
+                <ul class="quick-links info">
+                    <li><a href="./projects/projects.html#tracer-desc">Learn More</a></li>
+                    <li><a href="https://github.com/danny-peng/tracer" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="skill-gallery">
+        <div class="gallery-label">
+        <h2>Skills: </h2>
+        </div>
+        <!-- credit to https://blog.logto.io/css-only-infinite-scroll for infinite scroll -->
+        <div class="gallery-preview carousel">
+            <div class="skill-group">
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                </div>
+                <div class="skill">
+                    <i class="devicon-github-original-wordmark"></i>
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                </div>
+                <div class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fusion/fusion-original.svg" />
+                </div>
+            </div>
+            
+            <!-- BEGIN DUPLICATES -->
+            <div class="skill-group">
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <i class="devicon-github-original-wordmark"></i>
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-original.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                </div>
+                <div aria-hidden class="skill">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fusion/fusion-original.svg" />
+                </div>
+            </div>
+            <!-- END DUPLICATES -->
+
+        </div>
+    </div>
+
+    <footer>
+        <!-- Modified Contact Form from Kadee80 on GitHub -->
+        <div class="contact" id="contact">
+            <div class="contact-form">
+                <h3>Contact Me: </h3>
+                <form method="POST" action="https://formspree.io/f/xvzwklkz">
+                    <div class="row">
+                        <div class="input-area">
+                        <label for="name" class="label-lg">Name: </label>
+                        <input type="text" name="name" class="input-lg" required />
+                        </div>
+
+                        <div class="input-area">
+                            <label for="email" class="label-lg">Email: </label>
+                            <input type="email" name="email" class="input-lg" required />
+                        </div>
+                    </div>
+                    <div class="message-area">
+                        <label for="message">Leave a Message!</label>
+                        <textarea name="message" class="message" placeholder="Let's connect!" required></textarea>
+                    </div>
+                    
+                    <div class="button-bar">
+                        <button type="submit" class="btn-dark">Send</button>
+                    </div>
+                    <input type="hidden" name="subject" value="New Submission from {{name}}" />
+                </form>
+            </div>
+        </div>
+    </footer>
+  </body>
+</html>

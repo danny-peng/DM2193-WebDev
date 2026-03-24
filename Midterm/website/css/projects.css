@@ -1,0 +1,85 @@
+@import url('../css/main.css');
+
+.page-wrapper {
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+}
+
+.gallery {
+    width: 100%;
+    padding: 2rem 10%;
+}
+
+.container {
+    margin: 0 8%;
+    margin-top: var(--nav-height);
+    background-color: rgba(0, 0, 0, 0.80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-label {
+    border-bottom: 1px solid white;
+    width: 90%;
+    text-align: center;
+    padding: 3%;
+}
+
+.project {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid white;
+    /* padding: 2 2rem; */
+    margin-bottom: 2rem;
+
+    scroll-margin-top: var(--nav-height);
+}
+
+.project img {
+    width: 200px;
+    height: auto;
+    margin-right: 1rem;
+}
+
+.project a {
+    text-decoration: none;
+    color: white;
+}
+
+.project a:hover {
+    /* text-decoration: underline; */
+    cursor: pointer;
+}
+
+.project-desc li{
+    margin-left: 1rem;
+    
+}
+
+.project .quick-links a {
+    font-size: 1rem;
+}
+
+.project .quick-links a:hover {
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+    }
+
+    .project img {
+        margin: 0 0 1rem 0;
+        align-self: center;
+    }
+}
