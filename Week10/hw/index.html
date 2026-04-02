@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Objects Lesson</title>
+  </head>
+  <body>
+    <h1>Open the Console to see your output!</h1>
+
+    <script>
+        const person = {
+        name: "Alex",
+        age: 22,
+        isStudent: true,
+        };
+
+        console.log(person);
+
+        const movie = {
+            title: "Inception",
+            year: 2010,
+            director: "Christopher Nolan",
+        };
+
+        // 1. Log the title using dot notation
+        console.log(movie.title);
+
+        // 2. Log the director using bracket notation
+        console.log(movie["director"]);
+
+        // 3. Store "year" in a variable, then use it to log the year
+        let field = "year";
+        console.log(movie[field]);
+
+        const car = {
+            make: "Toyota",
+            model: "Camry",
+            year: 2020,
+        };
+
+        // 1. Update the year to 2024
+        car.year = 2024;
+
+        // 2. Add a color property set to any color you like
+        car.color = "blue";
+
+        // 3. Delete the model property
+        delete car.model;
+
+        // 4. Log the full object to see the result
+        console.log(car);
+
+
+        const dog = {
+            name: "Biscuit",
+            breed: "Beagle",
+            bark() {
+                console.log(this.name + " says: Woof!");
+            },
+        };
+
+        // 1. Call bark()
+        dog.bark();
+
+        // 2. Add a method called "describe" that logs:
+        //    "Biscuit is a Beagle"
+        //    (use this.name and this.breed)
+        dog.describe = function () {
+        console.log(this.name + " is a " + this.breed);
+        };
+
+        dog.describe();
+
+
+        const laptop = {
+            brand: "Apple",
+            model: "MacBook Pro",
+            ram: 16,
+            storage: 512,
+        };
+
+        // 1. Log all the keys
+        console.log(Object.keys(laptop));
+
+        // 2. Log all the values
+        console.log(Object.values(laptop));
+
+        // 3. Log all key-value pairs
+        console.log(Object.entries(laptop));
+
+
+
+        const book = {
+            title: "Sky Raiders",
+            author: "Brandon Mull",
+            pages: 432,
+            isAvailable: true,
+        };
+
+        console.log(book.title);
+        console.log(book["author"]);
+        book.genre = "Fantasy";
+        book.isAvailable = false;
+
+        book.describe = function() {
+            console.log(this.title + " by " + this.author + " - " + this.pages + " pages");
+        }
+
+        book.describe();
+        console.log(Object.keys(book));
+
+        const book1 = {
+            title: "Sky Raiders",
+            author: "Brandon Mull",
+        };
+        const book2 = {
+            title: "Wings of Fire",
+            author: "Tui T. Sutherland"
+        };
+        const book3 = {
+            title: "Witch and Wizard",
+            author: "James Patterson"
+        };
+
+        const library = {
+            books: [book1, book2, book3],
+            listTitles() {
+                this.books.forEach(book => {
+                    console.log(book.title);
+                });
+            }
+        }
+
+        library.listTitles();
+    </script>
+  </body>
+</html>
