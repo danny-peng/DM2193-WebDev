@@ -125,9 +125,9 @@
         const library = {
             books: [book1, book2, book3],
             listTitles() {
-                this.books.forEach(book => {
-                    console.log(book.title);
-                });
+                for (let i = 0; i < this.books.length; i++) {
+                    console.log(this.books[i].title);
+                }
             }
         }
 
