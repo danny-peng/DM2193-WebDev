@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Minesweeper</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body class="" data-bs-theme="dark">
+    <div class="container mt-4">
+      <h1 class="mb-4 fw-bold">MINESWEEPER</h1>
+      <div class="row justify-content-center">
+        <div class="col col-md-12 col-lg-9 text-center">
+          <div class="col">
+            <div
+              class="d-flex justify-content-between bg-primary rounded-top p-3"
+            >
+              <div class="fs-4 fw-bold text-danger">
+                🚩 <span id="mine-count">--</span>
+              </div>
+              <div class="fs-4 fw-bold text-white">
+                👆 <span id="moves">000</span>
+              </div>
+              <div class="fs-4 fw-bold text-white">
+                ⏱️ <span id="timer">000</span>
+              </div>
+              <button
+                id="restart-btn"
+                class="btn btn-warning fw-bold"
+                onClick="initGame()"
+              >
+                Restart
+              </button>
+            </div>
+
+            <div class="game-area">
+              <div id="game-board"></div>
+            </div>
+            <div class="alert alert-success hidden" role="alert" id="win-alert">
+              You win!
+            </div>
+            <div class="alert alert-danger hidden" role="alert" id="lose-alert">
+              You hit a mine!
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3">
+          <div class="bg-success rounded-top p-3">
+            <h4 class="text-light fw-bold">Settings</h4>
+          </div>
+          <div class="bg-success-subtle rounded-bottom p-3">
+            <div class="container p-0 pb-3">
+              <label for="spawn-rate" class="form-label"
+                >Mine Spawn Rate:
+              </label>
+
+              <output
+                for="spawn-rate"
+                id="spawn-rate-output"
+                aria-hidden="true"
+              ></output>
+              <div
+                class="d-flex justify-content-between align-items-center gap-2 align-items-center"
+              >
+                <span>17%</span>
+                <input
+                  type="range"
+                  class="form-range"
+                  min="1"
+                  max="5"
+                  value="1"
+                  id="spawn-rate"
+                />
+                <span>83%</span>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="input-group mb-3">
+                <span
+                  class="col-2 col-lg-5 col-xxl-3 input-group-text bg-success"
+                  id="inputGroup-sizing-default"
+                  >Rows</span
+                >
+                <input
+                  type="number"
+                  min="5"
+                  max="20"
+                  value="10"
+                  class="form-control"
+                  id="row-input"
+                />
+              </div>
+              <div class="input-group mb-3">
+                <span
+                  class="col-2 col-lg-5 col-xxl-3 input-group-text bg-success"
+                  id="inputGroup-sizing-default"
+                  >Cols</span
+                >
+                <input
+                  type="number"
+                  min="5"
+                  max="25"
+                  value="10"
+                  class="form-control"
+                  id="col-input"
+                />
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row justify-content-center mb-1">
+                <div class="col-auto d-flex justify-content-center">
+                  <label for="color-one" class="form-label mt-2 lh-1"
+                    >Color One:
+                  </label>
+                </div>
+                <div class="col-auto d-flex justify-content-center">
+                  <input
+                    class="form-control form-control-color border-0 p-1 btn"
+                    type="color"
+                    id="color-one"
+                    name="color-one"
+                    value="#e1ec57"
+                  />
+                </div>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-auto d-flex justify-content-center">
+                  <label for="color-two" class="form-label mt-2 lh-1"
+                    >Color Two:
+                  </label>
+                </div>
+                <div class="col-auto d-flex justify-content-center">
+                  <input
+                    class="form-control form-control-color border-0 p-1 btn"
+                    type="color"
+                    id="color-two"
+                    name="color-two"
+                    value="#2ecffe"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col">
+                  <button
+                    id="apply-btn"
+                    class="btn btn-warning fw-bold mt-2 justify-content-center d-block mx-auto"
+                    onClick="applySettings()"
+                  >
+                    Apply
+                  </button>
+                </div>
+                <div class="col">
+                  <button
+                    id="reset-btn"
+                    class="btn btn-danger fw-bold mt-2 justify-content-center d-block mx-auto"
+                    onClick="resetSettings()"
+                  >
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-success rounded-top p-3 mt-4">
+            <h4 class="text-white fw-bold mb-0">High Scores</h4>
+          </div>
+          <div class="bg-success-subtle rounded-bottom p-3">
+            <div id="high-score-list" class="text-white"></div>
+            <button
+              class="btn btn-sm btn-outline-danger mt-3 w-100 fw-bold"
+              onclick="clearCurrentHighScore()"
+            >
+              Clear Current High Score
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>
